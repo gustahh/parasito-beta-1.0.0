@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Parasito</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/mobile.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <script src="script.js"></script>
+  <script src="mobile.js"></script>
+  <header>
+    <div id="titulo"><img src="img/parasito-logo.svg"></div>
+    <ul class="menu">
+      <a href="index.html">
+        <li class="menu-li">
+          <span class="material-icons-outlined">
+            home
+          </span>
+
+        </li>
+      </a>
+      <a href="catalogo.html">
+        <li class="menu-li">
+          <span class="material-icons">
+            bug_report
+          </span>
+        </li>
+      </a>
+      <li class="menu-li">
+        <span class="material-icons-outlined">
+          sick
+        </span>
+      </li>
+      <li class="menu-li">
+        <span class="material-icons-outlined">
+          group
+        </span>
+      </li>
+    </ul>
+    <div class="box-search">
+      <input type="search" class="pesquisa">
+      <button id="btnPesquisa">
+        <span class="material-icons-outlined" id="pesquisa_icon">
+          search
+        </span>
+      </button>
+    </div>
+    <div class="pesquisa-mobile-logo" onclick="pesquisa()">
+      <span class="material-icons-outlined" id="pesquisa_icon">
+        search
+      </span>
+    </div>
+    <div class="filtro-mobile-logo" onclick="filtro()">
+      <span class="material-icons-outlined" id="filtro">
+        filter_list
+      </span>
+    </div>
+  </header>
+  <div class="footer-menu">
+    <ul class="menu-mobile">
+      
+      <a href="index.html">
+        <li>
+          <span class="material-icons-outlined">
+            home
+          </span>
+        </li>
+      </a>
+      <a href="index.html">
+        <li>
+          <span class="material-icons">
+            bug_report
+          </span>
+        </li>
+      </a>
+      <li>
+        <span class="material-icons-outlined">
+          sick
+        </span>
+      </li>
+      <li>
+        <span class="material-icons-outlined">
+          group
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div class="filtro-mobile" style="display: none;">
+    <p id="filtro-txt">Filtrar</p>
+
+  </div>
+  <div class="pesquisa-mobile" style="display: none;">
+    <input type="search" class="pesquisa-mobile-input" placeholder="Pesquisar">
+  </div>
+  <div class="menu-lateral" style="width: 20%">
+    <button class="btnOcultar" onclick="menuLateral()">
+      <span class="material-icons-outlined" id="ocultarIcon">
+        chevron_left
+      </span>
+      <span class="material-icons-outlined" id="mostrarIcon">
+        chevron_right
+      </span>
+    </button>
+    <span class="material-icons-outlined" id="filtro-desktop">
+      filter_list
+    </span>
+    <div class="box-filtro">
+      <p id="filtro-txt-desktop">Filtrar</p>
+      <p class="filtro-item">Família</p>
+      <button class="expandirFamilia" onclick="mostrarFiltrosFamilia()">
+        <span class="material-icons-outlined" id="expandir-icon-familia">
+          expand_more
+        </span>
+      </button>
+
+      <div class="filtro-opcoesf" style="height: 0px; opacity: 0;">
+        <script>exibirFiltroFamilia();</script>
+
+      </div>
+
+      <p class="filtro-item">Habitat</p>
+      <button class="expandir" id="expandirHabitat" onclick="mostrarFiltrosHabitat()">
+        <span class="material-icons-outlined" id="expandir-icon-habitat">
+          expand_more
+        </span>
+      </button>
+      <br><br>
+      <div class="filtro-opcoesh" style="height: 0px; opacity: 0;">
+        <script>exibirFiltroHabitat();</script>
+        <br>
+      </div>
+    </div>
+
+  </div>
+  <div id="display-items">
+    <script>alfabeto();</script>
+    <!-- 
+    <div class="box-letra">
+
+      
+      <p class="letra">a</p>
+      <br><br><br>
+      <div class="item">
+        <div class="item-imagem"><img
+            src="https://pm1.aminoapps.com/6738/ce06f86b9f083e85b00eabdda88651243591a25dv2_hq.jpg" id="imagem">
+        </div>
+        <p class="nome-especie">nome cientifico</p>
+      </div>
+       
+  </div>
+-->
+  </div>
+
+
+</body>
+
+</html>

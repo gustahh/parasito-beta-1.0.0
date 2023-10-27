@@ -1,0 +1,104 @@
+@media only screen and (max-width: 600px) {
+  header {
+    position: fixed;
+    background-color: #F5F5F5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9%;
+    z-index: 1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.10);
+  }
+
+  .titulo {
+    position: relative;
+    float: left;
+  }
+
+  .box-search {
+    display: none;
+  }
+
+  .menu-lateral {
+    display: none;
+  }
+
+  #display-items {
+    width: 100%;
+  }
+
+  .pesquisa-mobile-logo {
+    display: block;
+    position: relative;
+    float: right;
+    margin: 20px 40px;
+    cursor: pointer;
+  }
+
+  .filtro-mobile-logo {
+    display: block;
+    position: relative;
+    float: right;
+    margin: 10px -20px;
+    cursor: pointer;
+  }
+
+  .filtro-mobile {
+    position: relative;
+    width: 100%;
+    height: 5%;
+    background-color: #E6E6E6;
+    margin: 60px 0px;
+  }
+
+  .pesquisa-mobile {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 5%;
+    background-color: transparent;
+    margin: 60px 0px;
+  }
+
+  .pesquisa-mobile-input {
+    position: relative;
+    border-style: none;
+    width: 100%;
+    height: 30px;
+    background-color: #D9D9D9;
+    font-family: 'Timeless', sans-serif;
+    font-weight: 700;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu-mobile {
+    position: relative;
+    float: none;
+    margin: 20px auto;
+    padding: 0;
+    z-index: 1;
+    transform: scale(1.2);
+  }
+
+  li {
+    margin: 0px 20px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .footer-menu {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 9%;
+    background-color: #E6E6E6;
+    text-align: center;
+    z-index: 1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.10);
+  }
+}
