@@ -9,44 +9,48 @@
   <link href="css/mobile.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
     rel="stylesheet">
-
+  <script src="jquery.js"></script>
 </head>
 
 <body>
   <script src="script.js"></script>
-  <script src="mobile.js"></script>
+  <script src="mobile.js" defer></script>
   <header>
     <div id="titulo"><img src="img/parasito-logo.svg"></div>
     <ul class="menu">
       <a href="index.html">
-        <li class="menu-li">
+        <li class="menu-li" title="Início">
           <span class="material-icons-outlined">
             home
           </span>
 
         </li>
       </a>
-      <a href="catalogo.html">
+      <a href="catalogo.html" title="Catálogo">
         <li class="menu-li">
           <span class="material-icons">
             bug_report
           </span>
         </li>
       </a>
-      <li class="menu-li">
-        <span class="material-icons-outlined">
-          sick
-        </span>
-      </li>
-      <li class="menu-li">
-        <span class="material-icons-outlined">
-          group
-        </span>
-      </li>
+      <a href="doenças.html">
+        <li class="menu-li" title="Doenças">
+          <span class="material-icons-outlined">
+            sick
+          </span>
+        </li>
+      </a>
+      <a href="sobre.html">
+        <li class="menu-li" title="Sobre">
+          <span class="material-icons-outlined">
+            group
+          </span>
+        </li>
+      </a>
     </ul>
     <div class="box-search">
       <input type="search" class="pesquisa">
-      <button id="btnPesquisa">
+      <button id="btnPesquisa" onclick="pesquisar()">
         <span class="material-icons-outlined" id="pesquisa_icon">
           search
         </span>
@@ -65,7 +69,7 @@
   </header>
   <div class="footer-menu">
     <ul class="menu-mobile">
-      
+
       <a href="index.html">
         <li>
           <span class="material-icons-outlined">
@@ -80,16 +84,20 @@
           </span>
         </li>
       </a>
-      <li>
-        <span class="material-icons-outlined">
-          sick
-        </span>
-      </li>
-      <li>
-        <span class="material-icons-outlined">
-          group
-        </span>
-      </li>
+      <a href="doenças.html">
+        <li class="menu-li" title="Doenças">
+          <span class="material-icons-outlined">
+            sick
+          </span>
+        </li>
+      </a>
+      <a href="sobre.html">
+        <li class="menu-li" title="Sobre">
+          <span class="material-icons-outlined">
+            group
+          </span>
+        </li>
+      </a>
     </ul>
   </div>
   <div class="filtro-mobile" style="display: none;">
@@ -99,7 +107,7 @@
   <div class="pesquisa-mobile" style="display: none;">
     <input type="search" class="pesquisa-mobile-input" placeholder="Pesquisar">
   </div>
-  <div class="menu-lateral" style="width: 20%">
+  <div class="menu-lateral" style="width: 20%;">
     <button class="btnOcultar" onclick="menuLateral()">
       <span class="material-icons-outlined" id="ocultarIcon">
         chevron_left
@@ -137,10 +145,83 @@
         <br>
       </div>
     </div>
+    <button class="btnFiltrar" onclick="filtrar();">Filtrar</button>
+  </div>
+  <div class="fundo" style="display: none"></div>
+  <div id="exibirBox" style="display: none">
+    <div id="exibirParasita">
+      <div class="infoBox">
+        <div class="boxAncora">
+          <div class="ancora"></div>
+        </div>
+        <span class="material-icons-outlined" id="fechar-guia" onclick='fechar()'>
+          close
+        </span>
+        <br><br><br>
+        <div class="foto-exibir"><img src="" id="imgExibir"></div>
+        <h1 class="nome-exibir" id="nomeCientifico">Nome cientifico</h1>
+        <p class="nome-exibir" id="nomePopular">Nome popular</p>
+        <br><br><br><br>
+        <div class="menuParasita">
+          <ul class="ulParasita">
+            <li class="liParasita" id="selecionado" data-index="resumo" onclick="menuParasita(event)">
+              Resumo
+            </li>
+            <li class="liParasita" data-index="descricao" onclick="menuParasita(event)">
+              Descrição
+            </li>
+            <li class="liParasita" data-index="ciclo" onclick="menuParasita(event)">
+              Ciclo
+            </li>
+            <li class="liParasita" data-index="reproducao" onclick="menuParasita(event)">
+              Reprodução
+            </li>
+            <li class="liParasita" data-index="hospedeiros" onclick="menuParasita(event)">
+              Hospedeiros
+            </li>
+            <li class="liParasita" data-index="doencas" onclick="menuParasita(event)">
+              Doenças
+            </li>
+          </ul>
+          <div class="indicador" id="indicadorParasita"></div>
+        </div>
+        <ul class="ulTaxonomia"></ul>
+        <p class="nome-exibir" id="descricao">Descrição</p>
+        <p class="nome-exibir" id="ciclo">Ciclo</p>
+        <p class="nome-exibir" id="reproducao">Reproducao</p>
+        <br><br><br>
+        <div class="boxCard"></div>
+        <ul class="ulDoencaNome">
+          <li class="liDoenca" id="doencas">item</li>
+        </ul>
+        <!-- 
+        
+        <br><br><br>
+        <p class="nome-exibir" id="hospedeiro">Hospedeiro principal</p>
+        <br><br><br><br>
+        <p class="nome-exibir" id="ciclo">Ciclo biológico</p>
+        <br><br><br><br>
+        <p class="nome-exibir" id="doencas">Principais doenças</p>
+        <br><br><br>
+        --->
+      </div>
 
+    </div>
+  </div>
+  <div class="opcoes">
+    <button id="popular" onclick="mudarNome();" class='ativo'>
+      Exibir nome popular
+    </button>
+    <button id="ordemAlfabetica" onclick="exibirAlfabeto();" class='ativo'>
+      Exibir por ordem alfabética
+    </button>
+    <button id="ordemAgrupar" onclick="exibirAgrupado();" class='ativo'>
+      Agrupar
+    </button>
   </div>
   <div id="display-items">
-    <script>alfabeto();</script>
+
+    <script>exibir();</script>
     <!-- 
     <div class="box-letra">
 

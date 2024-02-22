@@ -18,7 +18,7 @@ header {
   left: 0;
   width: 100%;
   height: 10%;
-  z-index: 1;
+  z-index: 3;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.10);
 }
 
@@ -84,6 +84,58 @@ h3 {
   font-weight: 700;
 }
 
+.opcoes {
+  position: relative;
+  float: right;
+  width: 80%;
+  height: auto;
+  transform: translateY(63px);
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+#popular {
+  position: relative;
+  float: left;
+  margin: 20px 10px;
+  font-family: 'Gabarito', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  width: auto;
+  height: auto;
+  background-color: #E6E6E6;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+#ordemAlfabetica {
+  position: relative;
+  float: left;
+  margin: 20px 10px;
+  font-family: 'Gabarito', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  width: auto;
+  height: auto;
+  background-color: #E6E6E6;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+#ordemAgrupar {
+  position: relative;
+  float: left;
+  margin: 20px 10px;
+  font-family: 'Gabarito', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  width: auto;
+  height: auto;
+  background-color: #E6E6E6;
+  border-radius: 20px;
+  padding: 5px;
+}
+
 .menu {
   position: relative;
   float: right;
@@ -106,7 +158,7 @@ h3 {
 }
 
 .menu-li {
-  margin: 0px 10px;
+  margin: 0px 20px;
   display: inline-block;
   cursor: pointer;
 }
@@ -128,6 +180,11 @@ h3 {
   position: relative;
   float: left;
 }
+
+#doencas:hover {
+  text-decoration: underline
+}
+
 
 a {
   text-decoration: none;
@@ -157,6 +214,14 @@ figure {
   width: 100%;
   height: 25px;
   background-color: #D9D9D9;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.pesquisa::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
 }
 
 .pesquisa-mobile-logo {
@@ -230,6 +295,14 @@ button {
   margin: 0px -5px;
 }
 
+.box-filtro {
+  display: block;
+}
+
+.box-filtro-mobile {
+  display: none;
+}
+
 #filtro-desktop {
   display: block;
   position: relative;
@@ -247,6 +320,31 @@ button {
   margin: 15px;
 }
 
+#exibindoResultadosPara {
+  margin: 20px 10px;
+}
+
+#btnLimpar {
+  position: relative;
+  float: right;
+  margin: 20px 20px;
+  font-family: 'Gabarito', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  width: auto;
+  height: auto;
+  background-color: #E6E6E6;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+#limparFiltro {
+  position: relative;
+  float: left;
+  margin: 3px 5px;
+  font-size: 15px;
+}
+
 .filtro-item {
   position: relative;
   float: left;
@@ -255,6 +353,17 @@ button {
   background-color: transparent;
   margin: 0px 10px;
   transition: margin 1s;
+}
+
+.btnFiltrar {
+  position: relative;
+  float: right;
+  background-color: black;
+  color: white;
+  font-family: 'Gabarito', sans-serif;
+  border-radius: 20px;
+  margin: 0px 10px;
+  transition: all 1s;
 }
 
 .expandir {
@@ -455,6 +564,16 @@ ul {
   margin: -3px 0px;
 }
 
+#btnAlfabeto {
+  margin: 15px -15px;
+}
+
+#expandir-icon-alfabeto {
+  transform: rotate(180deg);
+  transition-timing-function: ease-in;
+  transition: transform 0.5s;
+}
+
 #expandir-icon-familia {
   margin: -3px -9px;
   transition-timing-function: ease-in;
@@ -475,13 +594,167 @@ ul {
   background-color: transparent;
   margin: 63px 0px;
   transition-timing-function: ease-in;
-  transition: width 0.5s;
+  transition: all 0.5s;
+}
+
+.fundo {
+  display: none;
+}
+
+#exibirBox {
+  display: none;
+  float: right;
+  width: 20%;
+}
+
+.infoBox {
+  position: relative;
+  width: auto;
+  max-width: 350px;
+  height: auto;
+  background-color: transparent;
+  white-space: normal;
+  margin: 70px 0px;
+}
+
+.menuParasita {
+  position: absolute;
+  width: 100%;
+  height: 12%;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.ulParasita {
+  display: flex;
+  color: black;
+  margin: 0px 0px;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s;
+}
+
+.liParasita {
+  list-style: none;
+  position: relative;
+  float: left;
+  margin: 0px 0px;
+  background-color: transparent;
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  font-family: 'Gabarito', sans-serif;
+}
+
+.foto-exibir {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+  margin: 10px 20px;
+  left: 16%;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+#imgExibir {
+  width: 100%;
+  height: 100%;
+  object-fit: inherit;
+}
+
+#exibirParasita {
+  position: fixed;
+  width: 25%;
+  height: 100%;
+  background-color: #E6E6E6;
+  margin: 0px -75px;
+  z-index: 2;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.nome-exibir {
+  position: relative;
+  float: left;
+  margin: 0px 20px;
+}
+
+#nomeCientifico {
+  font-size: 25px;
+}
+
+#nomeCientificoParasita {
+  font-size: 20px;
+  margin: 5px 0px;
+}
+
+.ulTaxonomia {
+  position: relative;
+  float: left;
+  margin: 50px 10px;
+  font-family: 'Gabarito', sans-serif;
+}
+
+.liTaxonomia {
+  margin: 0px 20px;
+}
+
+#descricao {
+  display: none;
+  margin: 50px 0px;
+  padding: 10px 10px;
+}
+
+#ciclo {
+  display: none;
+  margin: 50px 0px;
+  padding: 10px 10px;
+}
+
+#reproducao {
+  display: none;
+  margin: 50px 0px;
+  padding: 10px 10px;
+}
+
+#textoControle {
+  font-family: 'Gabarito', sans-serif;
+}
+
+#liControle {
+  margin: 0px 20px !important;
+}
+
+#fechar-guia {
+  position: relative;
+  float: right;
+  margin: 10px 10px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.boxAncora {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  background-color: black;
+  margin: 0;
+  padding: 0;
 }
 
 .box-letra {
   position: relative;
   float: left;
-  width: 80%;
+  width: 100%;
   height: auto;
   background-color: transparent;
   margin: 0px 0px;
@@ -494,7 +767,17 @@ ul {
   font-size: 40px;
 }
 
+.numParasitas {
+  position: relative;
+  float: right;
+  margin: 0px 10px;
+  font-family: 'Gabarito', sans-serif;
+  font-weight: 700;
+  opacity: 50%;
+}
+
 .item {
+  display: block;
   position: relative;
   float: left;
   margin: 0px 10px;
@@ -502,6 +785,14 @@ ul {
   height: 167px;
   background-color: transparent;
   text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.item:hover {
+  background-color: #E6E6E6;
 }
 
 .item-imagem {
@@ -512,6 +803,7 @@ ul {
   height: 127px;
   background-color: transparent;
   overflow: hidden;
+  border-radius: 5px;
 }
 
 #imagem {
@@ -528,43 +820,229 @@ ul {
   display: none;
 }
 
-/* parasita.php */
-
-.parasita {
+#linkIcon {
   position: relative;
   float: left;
-  width: 800px;
+  margin: 0px 5px;
+}
+
+.linkReferencias {
+  position: relative;
+  float: left;
+  width: auto;
   height: auto;
+  background-color: #c9c9c9;
+  border-radius: 5px;
+  padding-right: 10px;
 }
 
-.foto {
+.linkUrl {
   position: relative;
   float: left;
-  width: 200px;
-  height: 200px;
-  margin: 20px 20px;
+  margin: 2px 0px;
 }
 
-.parasita-nome {
+/* doenças.html */
+
+#nomeDoenca {
+  margin: 10px 10px;
+  font-size: 30px;
+}
+
+.itemDoenca {
+  display: block;
   position: relative;
   float: left;
-  margin: 12px 0px;
+  margin: 0px 10px;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
 }
 
-.parasita-popular {
+.nome-doenca {
+  position: relative;
+  margin: 0px 20px;
+  font-family: 'Gabarito', sans-serif;
+}
+
+.nome-doenca:hover {
+  text-decoration: underline;
+}
+
+#btnOrdemAlfabetica {
   position: relative;
   float: left;
-  margin: -25px 0px;
+  margin: 20px 10px;
+  font-family: 'Gabarito', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  width: auto;
+  height: auto;
+  background-color: #E6E6E6;
+  border-radius: 20px;
+  padding: 5px;
 }
 
-.habitat {
+#exibirDoenca {
+  position: fixed;
+  width: 25%;
+  height: 100%;
+  background-color: #E6E6E6;
+  margin: 0px -75px;
+  z-index: 2;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.menuDoenca {
+  position: absolute;
+  width: 100%;
+  height: 28%;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.ulDoenca {
+  display: flex;
+  color: black;
+  margin: 0px 0px;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s;
+}
+
+.liDoenca {
+  list-style: none;
+  position: relative;
+  float: left;
+  margin: 0px 0px;
+  background-color: transparent;
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  font-family: 'Gabarito', sans-serif;
+}
+
+.indicador {
+  position: relative;
+  width: 27%;
+  height: 5%;
+  background-color: black;
+  top: 95%;
+  margin: 0px 0px;
+  transition: all 0.2s;
+}
+
+#indicadorParasita {
+  width: 24%;
+}
+
+#selecionado {
+  font-weight: 700;
+}
+
+#nomeDoenca {
+  margin: 10px 10px;
+}
+
+
+#textoDesc {
+  margin: 0px 10px;
+}
+
+.cardParasita {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: #D9D9D9;
+  margin: 10px 10px;
+  border-radius: 5px;
+}
+
+.foto-exibir-doenca {
+  position: relative;
+  float: left;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  object-fit: cover;
+  margin: 10px 10px;
+  border-radius: 5px;
+}
+
+.nome-exibir-doenca {
   position: relative;
   float: left;
   margin: 10px 0px;
 }
 
-.hospedeiros {
+.nome-popular-exibir-doenca {
   position: relative;
   float: left;
-  margin: -15px 0px;
+  margin: -25px 0px;
+}
+
+.boxCard {
+  display: none;
+}
+
+.cardHospedeiro {
+  position: relative;
+  float: left;
+  width: 95%;
+  height: 100px;
+  background-color: #D9D9D9;
+  margin: 10px 10px;
+  border-radius: 5px;
+}
+
+.ulDoencaNome {
+  display: none;
+  position: relative;
+  float: left;
+  margin: 0px 40px;
+  font-family: 'Gabarito', sans-serif;
+}
+
+.liDoencasNome {
+  position: relative;
+}
+
+/* sobre.html */
+
+.sobre {
+  width: 100% !important;
+  margin: 63px -10px !important;
+}
+
+#sobreTexto {
+  position: relative;
+  width: 98%;
+  height: auto;
+}
+
+.box-imgGrupo {
+  position: relative;
+  float: left;
+  background-color: red;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+#imgGrupo {
+  position: relative;
+  margin: -300px 0px;
+}
+
+#legendaGrupo {
+  position: relative;
+  float: left;
 }
